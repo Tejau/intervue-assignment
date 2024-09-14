@@ -8,6 +8,7 @@ This project contains a live polling system, built using Node.js for the backend
 - **Role-based Functionality**: Students can answer polls, and teachers can create/manage polls.
 - **Floating Chat**: A floating chat box is available across all pages for real-time communication (not completely implemented).
 
+Still we can work on error and edge case handling but due to time limit, I gave what I could.
 ## Project Structure
 ```bash
 project-root/
