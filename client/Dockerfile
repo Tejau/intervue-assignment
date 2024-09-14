@@ -16,5 +16,7 @@ COPY . .
 # Expose the port for the app (adjust based on your environment, e.g., React typically runs on 3000, backend on 8000)
 EXPOSE 3000
 
+# this configuration will not serve static files since there are no static file I have used this command
+
 # Command to run the app
 CMD ["npm", "start"]
