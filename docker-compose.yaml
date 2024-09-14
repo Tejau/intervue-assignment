@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./server:/usr/src/app
+      - /usr/src/app/node_modules  # Ensures node_modules are not overwritten by the host
+    environment:
+      NODE_ENV: development
+    networks:
+      - app-network
+    command: npm start  # Ensures the server is started correctly
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules  # Ensures node_modules are not overwritten by the host
+    environment:
+      NODE_ENV: development
+    networks:
+      - app-network
+    command: npm start  # Ensures the client is started correctly
+
+networks:
+  app-network:
+    driver: bridge
